@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://53hj0xobcmgs"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5vpud"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aempn"]
+radius = 18.2483
+
+[node name="Ball" type="StaticBody2D"]
+self_modulate = Color(0.18359, 0.183591, 0.18359, 1)
+position = Vector2(49, 86)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+material = SubResource("CanvasItemMaterial_5vpud")
+shape = SubResource("CircleShape2D_aempn")
