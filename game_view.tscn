@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dbjmx2vyascrc"]
+[gd_scene load_steps=12 format=3 uid="uid://dbjmx2vyascrc"]
 
 [ext_resource type="Script" path="res://ball.gd" id="1_5v5nn"]
 [ext_resource type="Texture2D" uid="uid://0dphgxg8b45o" path="res://icon.svg" id="2_0m5u0"]
 [ext_resource type="Script" path="res://player.gd" id="3_ujm60"]
+[ext_resource type="Script" path="res://ai.gd" id="4_p0fw2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m6erw"]
 size = Vector2(1152, 7)
@@ -49,25 +50,27 @@ offset_right = 1152.0
 offset_bottom = 8.0
 
 [node name="Ball" type="CharacterBody2D" parent="."]
+position = Vector2(580, 296)
 script = ExtResource("1_5v5nn")
 
 [node name="CollisionDetector" type="Area2D" parent="Ball"]
-position = Vector2(575, 324)
+position = Vector2(1, 3)
 
 [node name="CollisionDetectorShape" type="CollisionShape2D" parent="Ball/CollisionDetector"]
 position = Vector2(-1, 1)
 shape = SubResource("CircleShape2D_xnhhy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
-position = Vector2(575, 324)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ball"]
+position = Vector2(1, 3)
 shape = SubResource("CircleShape2D_gsaep")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ball"]
-position = Vector2(575, 324)
+position = Vector2(1.00006, 3)
 scale = Vector2(0.258362, 0.260376)
 texture = ExtResource("2_0m5u0")
 
 [node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(-7, 6)
 script = ExtResource("3_ujm60")
 
 [node name="PlayerCollisionDetector" type="Area2D" parent="Player"]
@@ -89,6 +92,7 @@ offset_bottom = 375.0
 color = Color(0.109804, 0.305882, 1, 1)
 
 [node name="AI" type="CharacterBody2D" parent="."]
+script = ExtResource("4_p0fw2")
 
 [node name="AICollisionDetector" type="Area2D" parent="AI"]
 position = Vector2(55, 316)
