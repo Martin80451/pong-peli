@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dbjmx2vyascrc"]
+[gd_scene load_steps=9 format=3 uid="uid://dbjmx2vyascrc"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_6r71h"]
 [ext_resource type="Script" path="res://ball.gd" id="1_58urq"]
+[ext_resource type="Texture2D" uid="uid://0dphgxg8b45o" path="res://icon.svg" id="2_5j6kw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m6erw"]
 size = Vector2(1152, 7)
@@ -9,8 +10,8 @@ size = Vector2(1152, 7)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yseqk"]
 size = Vector2(1152, 8)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wi4n"]
-size = Vector2(20, 19)
+[sub_resource type="CircleShape2D" id="CircleShape2D_gsaep"]
+radius = 18.1108
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4dfn"]
 size = Vector2(23, 111)
@@ -41,18 +42,17 @@ shape = SubResource("RectangleShape2D_yseqk")
 offset_right = 1152.0
 offset_bottom = 8.0
 
-[node name="Ball" type="StaticBody2D" parent="."]
+[node name="Ball" type="CharacterBody2D" parent="."]
 script = ExtResource("1_58urq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
-position = Vector2(576, 321.5)
-shape = SubResource("RectangleShape2D_3wi4n")
+position = Vector2(575, 324)
+shape = SubResource("CircleShape2D_gsaep")
 
-[node name="ColorRect" type="ColorRect" parent="Ball"]
-offset_left = 566.0
-offset_top = 312.0
-offset_right = 586.0
-offset_bottom = 331.0
+[node name="Sprite2D" type="Sprite2D" parent="Ball"]
+position = Vector2(575, 324)
+scale = Vector2(0.258362, 0.260376)
+texture = ExtResource("2_5j6kw")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 script = ExtResource("1_6r71h")
