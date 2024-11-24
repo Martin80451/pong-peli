@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbjmx2vyascrc"]
+[gd_scene load_steps=11 format=3 uid="uid://dbjmx2vyascrc"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_6r71h"]
-[ext_resource type="Script" path="res://ball.gd" id="1_58urq"]
-[ext_resource type="Texture2D" uid="uid://0dphgxg8b45o" path="res://icon.svg" id="2_5j6kw"]
+[ext_resource type="Script" path="res://ball.gd" id="1_5v5nn"]
+[ext_resource type="Texture2D" uid="uid://0dphgxg8b45o" path="res://icon.svg" id="2_0m5u0"]
+[ext_resource type="Script" path="res://player.gd" id="3_ujm60"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m6erw"]
 size = Vector2(1152, 7)
@@ -10,8 +10,14 @@ size = Vector2(1152, 7)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yseqk"]
 size = Vector2(1152, 8)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_xnhhy"]
+radius = 22.8035
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_gsaep"]
 radius = 18.1108
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yym1x"]
+size = Vector2(44, 112)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4dfn"]
 size = Vector2(23, 111)
@@ -43,7 +49,14 @@ offset_right = 1152.0
 offset_bottom = 8.0
 
 [node name="Ball" type="CharacterBody2D" parent="."]
-script = ExtResource("1_58urq")
+script = ExtResource("1_5v5nn")
+
+[node name="CollisionDetector" type="Area2D" parent="Ball"]
+position = Vector2(575, 324)
+
+[node name="CollisionDetectorShape" type="CollisionShape2D" parent="Ball/CollisionDetector"]
+position = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_xnhhy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
 position = Vector2(575, 324)
@@ -52,10 +65,17 @@ shape = SubResource("CircleShape2D_gsaep")
 [node name="Sprite2D" type="Sprite2D" parent="Ball"]
 position = Vector2(575, 324)
 scale = Vector2(0.258362, 0.260376)
-texture = ExtResource("2_5j6kw")
+texture = ExtResource("2_0m5u0")
 
 [node name="Player" type="CharacterBody2D" parent="."]
-script = ExtResource("1_6r71h")
+script = ExtResource("3_ujm60")
+
+[node name="PlayerCollisionDetector" type="Area2D" parent="Player"]
+position = Vector2(110, 632)
+
+[node name="PlayerCollisionDetectorShape" type="CollisionShape2D" parent="Player/PlayerCollisionDetector"]
+position = Vector2(-57, -311)
+shape = SubResource("RectangleShape2D_yym1x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(53.5, 319.5)
@@ -70,6 +90,13 @@ color = Color(0.109804, 0.305882, 1, 1)
 
 [node name="AI" type="CharacterBody2D" parent="."]
 
+[node name="AICollisionDetector" type="Area2D" parent="AI"]
+position = Vector2(55, 316)
+
+[node name="AICollisionDetectorShape" type="CollisionShape2D" parent="AI/AICollisionDetector"]
+position = Vector2(1046, 5)
+shape = SubResource("RectangleShape2D_yym1x")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AI"]
 position = Vector2(1100.5, 320.5)
 shape = SubResource("RectangleShape2D_d5u4s")
@@ -80,3 +107,5 @@ offset_top = 265.0
 offset_right = 1113.0
 offset_bottom = 377.0
 color = Color(1, 0.12549, 0.243137, 1)
+
+[connection signal="area_entered" from="Ball/CollisionDetector" to="Ball" method="_on_collision_detector_area_entered"]
