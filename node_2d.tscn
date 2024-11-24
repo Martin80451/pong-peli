@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://qrqgicjykd28"]
+[gd_scene load_steps=7 format=3 uid="uid://qrqgicjykd28"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_oon0n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ggos"]
 bg_color = Color(0.352941, 0.0235294, 0.156863, 1)
@@ -40,7 +42,8 @@ Button/styles/hover = SubResource("StyleBoxFlat_ed84x")
 Button/styles/normal = SubResource("StyleBoxFlat_wvq0h")
 Button/styles/pressed = SubResource("StyleBoxFlat_8u4ed")
 
-[node name="Node2D" type="Node2D"]
+[node name="main" type="Node2D"]
+script = ExtResource("1_oon0n")
 
 [node name="StartGameButton" type="Button" parent="."]
 anchors_preset = 8
@@ -85,3 +88,5 @@ offset_top = -77.0
 offset_right = 57.0
 offset_bottom = -37.0
 text = "GAME NAME"
+
+[connection signal="pressed" from="StartGameButton" to="." method="_on_start_game_button_pressed"]
