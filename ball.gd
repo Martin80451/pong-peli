@@ -1,14 +1,16 @@
 extends CharacterBody2D
 
 var area_entered = 0
+var initial_pos
 var speed = 300
 func _ready():
 	velocity = Vector2(-200, 200).normalized() * speed
-	#print(position)
+	initial_pos = position
 
 func _process(delta):
 	var collision = move_and_collide(velocity * delta)
-	# Above code keeps ball going forever for some reason
+	if position.x > 1154 or position.x < 0:
+		position = initial_pos
 	if collision:
 		velocity = velocity.bounce(collision.get_normal())
 
