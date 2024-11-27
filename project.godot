@@ -13,6 +13,10 @@ config_version=5
 run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.3")
 
+[display]
+
+window/stretch/mode="viewport"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
