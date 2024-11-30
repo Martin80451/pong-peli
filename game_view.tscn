@@ -39,17 +39,21 @@ offset_top = 50.0
 offset_right = -35.0
 offset_bottom = 73.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(6.01634e-09, 0.26907, 2.40654e-07, 1)
+theme_override_font_sizes/font_size = 35
 
 [node name="AIScoreLabel" type="Label" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 24.0
+offset_left = 36.0
 offset_top = 50.0
-offset_right = 25.0
-offset_bottom = 73.0
+offset_right = 37.0
+offset_bottom = 99.0
 grow_horizontal = 2
 size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0, 0.270588, 0, 1)
+theme_override_font_sizes/font_size = 35
 
 [node name="CountdownLabel" type="Label" parent="."]
 visible = false
@@ -61,10 +65,10 @@ offset_top = 90.0
 offset_right = 5.0
 offset_bottom = 113.0
 grow_horizontal = 2
-scale = Vector2(2, 2)
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.137255, 0.972549, 0.223529, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
 horizontal_alignment = 1
 vertical_alignment = 1
 
