@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://game_won.gd" id="1_05wcr"]
 
-[sub_resource type="Gradient" id="Gradient_khm5c"]
+[sub_resource type="Gradient" id="Gradient_ks1g7"]
 interpolation_color_space = 2
 offsets = PackedFloat32Array(0, 0.120112)
 colors = PackedColorArray(0.137255, 0.972549, 0.223529, 1, 0.28485, 0.28485, 0.28485, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_dr5vd"]
-gradient = SubResource("Gradient_khm5c")
+gradient = SubResource("Gradient_ks1g7")
 fill_from = Vector2(0, 0.0042735)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hwix7"]
@@ -17,7 +17,7 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.137255, 0.972549, 0.223529, 1)
+border_color = Color(0.890196, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ggos"]
 bg_color = Color(0.352941, 0.0235294, 0.156863, 1)
