@@ -82,11 +82,13 @@ text = "OPTIONS
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = -49.0
-offset_top = -77.0
-offset_right = 57.0
-offset_bottom = -37.0
-text = "GAME NAME"
+[node name="Label" type="Label" parent="."]
+offset_left = -147.0
+offset_top = -101.0
+offset_right = 150.0
+offset_bottom = -59.0
+theme_override_colors/font_color = Color(0.137255, 0.972549, 0.223529, 1)
+theme_override_font_sizes/font_size = 30
+text = "ROCKET RALLY DUEL"
 
 [connection signal="pressed" from="StartGameButton" to="." method="_on_start_game_button_pressed"]

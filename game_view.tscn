@@ -136,25 +136,27 @@ offset_bottom = 375.0
 color = Color(0.109804, 0.305882, 1, 1)
 
 [node name="AI" type="CharacterBody2D" parent="."]
+position = Vector2(1059, 319)
 script = ExtResource("4_p0fw2")
 
 [node name="AICollisionDetector" type="Area2D" parent="AI"]
-position = Vector2(55, 316)
+position = Vector2(-3, 2)
 
 [node name="AICollisionDetectorShape" type="CollisionShape2D" parent="AI/AICollisionDetector"]
-position = Vector2(1046, 5)
+position = Vector2(1, -1)
 shape = SubResource("RectangleShape2D_yym1x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AI"]
-position = Vector2(1100.5, 320.5)
+position = Vector2(-3, 2)
 shape = SubResource("RectangleShape2D_d5u4s")
 
 [node name="ColorRect" type="ColorRect" parent="AI"]
-offset_left = 1089.0
-offset_top = 265.0
-offset_right = 1113.0
-offset_bottom = 377.0
+offset_left = -16.0
+offset_top = -55.0
+offset_right = 8.0
+offset_bottom = 57.0
 color = Color(1, 0.12549, 0.243137, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0

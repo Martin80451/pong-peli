@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var area_entered = 0
+var area_entered: float = 0
 var initial_pos
 var ai_score = 0
 var player_score = 0
@@ -24,7 +24,7 @@ func _process(delta):
 
 func _on_collision_detector_area_entered(area: Area2D):
 	area_entered += 1
-	print(area_entered)
+	print(fmod(area_entered, 3))
 	
 func stop_ball():
 	velocity = Vector2.ZERO

@@ -5,7 +5,7 @@
 [sub_resource type="Gradient" id="Gradient_khm5c"]
 interpolation_color_space = 2
 offsets = PackedFloat32Array(0, 0.122905)
-colors = PackedColorArray(0.891291, 4.18738e-06, 8.66354e-07, 1, 0.28485, 0.28485, 0.28485, 1)
+colors = PackedColorArray(0.891291, 4.18738e-06, 8.66354e-07, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_20glc"]
 gradient = SubResource("Gradient_khm5c")
